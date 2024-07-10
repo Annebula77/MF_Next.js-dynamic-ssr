@@ -1,0 +1,23 @@
+{
+  "name": "nextjs-dynamic-ssr",
+  "description": "Server Side Rendering with Next.js",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "rimraf .next",
+    "preinstall": "pnpm install --ignore-scripts",
+    "start": "pnpm --parallel --filter nextjs-dynamic-ssr_* dev",
+    "build": "pnpm --parallel --filter nextjs-dynamic-ssr_* build",
+    "serve": "pnpm --parallel --filter nextjs-dynamic-ssr_* start",
+    "e2e:ci": "pnpm start & sleep 2 && wait-on tcp:3001 && wait-on tcp:3002 && wait-on tcp:3000 && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/*.cy.ts\" --browser=chrome"
+  },
+  "dependencies": {
+    "@module-federation/sdk": "^0.2.0",
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.7",
+    "wait-on": "7.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

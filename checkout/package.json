@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-dynamic-ssr_checkout",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "rimraf .next && cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
+    "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "start": "pnpm run build && cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next start"
+  },
+  "dependencies": {
+    "@module-federation/nextjs-mf": "8.3.24",
+    "@module-federation/runtime": "0.2.1",
+    "lodash": "4.17.21",
+    "next": "^14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "5.92.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.5.2"
+  }
+}
